@@ -1,0 +1,38 @@
+.preview{
+  width: inherit;
+  position: relative;
+  cursor: pointer;
+  transition: all .3s;
+  box-shadow: -4px 4px 10px -4px black;
+  &:hover{
+    figcaption{
+      height: 100%;
+      font-size: 1.2rem;
+    }
+  }
+  &:active{
+    box-shadow: -4px 4px 1px -4px black;
+    transform: scale(.99);
+  }
+  img{
+    height: auto;
+    width: 100%;
+    vertical-align: middle;
+  }
+  figcaption{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgba(0,0,0,.6);
+    color: white;
+    font-size: .9rem;
+    height: 35%;
+    transition: all .3s;
+    padding: 32px;
+    box-sizing: border-box;
+  }
+}

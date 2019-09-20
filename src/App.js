@@ -1,25 +1,37 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, {Fragment} from 'react';
+import './App.scss';
+import { BrowserRouter, Route, Switch } from "react-router-dom";
 
-function App() {
+import FilterMenu from './components/filter/filterMenu';
+import PreviewList from './components/preview/previewList';
+import CocktailDetails from './components/details/details';
+import BurgerMenu from './components/BurgerMenu/burgerMenu';
+
+// Material UI
+import CssBaseline from '@material-ui/core/CssBaseline';
+
+function App() { 
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BrowserRouter>
+      {/* A Css reset from Material Ui */}
+      <CssBaseline />
+      <div className="App">
+        <Route path="/" render={props => (
+          <Fragment>
+            <FilterMenu  {...props} />
+            <BurgerMenu/>
+          </Fragment>
+        )} />
+        
+        <Switch>
+          {/* <Route path="/" exact component={FrontPage} /> */}
+          <Route path='/filter' component={PreviewList} />
+          <Route path='/cocktail' component={CocktailDetails} />
+        </Switch>
+        
+      </div>
+    </BrowserRouter>
   );
 }
 

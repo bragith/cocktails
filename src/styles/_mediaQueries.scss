@@ -1,0 +1,13 @@
+//Tablet media Query
+@mixin mediaTablet {
+  @media screen and (max-width: 768px) {
+    @content;
+  }
+}
+
+//Phone
+@mixin mediaPhone {
+  @media screen and (max-width: 640px) {
+    @content;
+  }
+}

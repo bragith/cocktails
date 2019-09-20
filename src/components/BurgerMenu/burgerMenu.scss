@@ -1,0 +1,119 @@
+@import '../../styles/mediaQueries';
+
+.burgerWrapper {
+  display: none;
+  z-index: 99;
+  position: fixed;
+  top: 25px;
+  right: 25px;
+}
+
+//Burger Icon
+.iconWrapper {
+  width: 45px;
+  min-height: 38px;
+  position: relative;
+  z-index: 1;
+  cursor: pointer;
+  span {
+    display: block;
+    width: 45px;
+    height: 3px;
+
+    position: absolute;
+    border-radius: 1.5px;
+    &:nth-child(1) {
+      top: 0;
+      left: 0;
+    }
+    &:nth-child(4) {
+      bottom: 0;
+      left: 0;
+    }
+  }
+  .close {
+    top: 50%;
+  }
+
+  //Animations propperties
+  &.closed {
+    .close {
+      transition: all 0.5s;
+    }
+    .closeOne {
+      transform: translateY(-50%);
+    }
+    .closeTwo {
+      transform: translateY(-50%);
+    }
+    .hide {
+      opacity: 1;
+      transition: all 0.7s;
+    }
+    span {
+      background-color: black;
+    }
+  }
+
+  &.open {
+    .close {
+      transition: all 0.7s;
+    }
+    .closeOne {
+      transform: rotate(45deg);
+    }
+    .closeTwo {
+      transform: rotate(-45deg);
+    }
+    .hide {
+      opacity: 0;
+      transition: all 0.5s;
+    }
+    span {
+      background-color: white;
+    }
+  }
+}
+
+//Burger nav
+.mainNav {
+  position: absolute;
+  background-color: black;
+  overflow: hidden;
+  right: -10px;
+  top: -8px;
+  border-radius: 30px;
+  &.show {
+    ul {
+      width: 500px;
+      transition: width 0.5s;
+    }
+  }
+  ul {
+    display: flex;
+    align-items: center;
+    height: 60px;
+    width: 0px;
+    transition: width 0.5s;
+    li {
+      margin: 0 25px;
+      font-size: 24px;
+      color: white;
+      cursor: pointer;
+      transition: color 0.25s;
+      &:hover {
+        color: black;
+      }
+    }
+  }
+}
+
+@include mediaTablet {
+  .burgerWrapper{
+    display: block;
+  }
+}
+
+@include mediaPhone {
+  
+}

@@ -1,0 +1,19 @@
+@import "../../styles/mediaQueries";
+#previewList{
+  ul{
+    width: 100%;
+    display: flex;
+    flex-flow: row wrap;
+    list-style: none;
+    margin: 0;
+    padding: 0 16px;
+    li{
+      width: 25%;
+      padding: 16px;
+      a{
+        all: unset;
+      }
+    }
+  }
+}
+

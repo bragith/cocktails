@@ -1,0 +1,30 @@
+#cocktailDetails{
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-start;
+  margin-top: 50px;
+  #cocktailThumb, article{
+    width: 40vw;
+  }
+  #cocktailThumb{
+    height: auto;
+  }
+  h1{
+    font-size: 1.5rem;
+    margin-bottom: 16px;
+  }
+  h2{
+    font-size: 1.1rem;
+    margin-bottom: 8px;
+  }
+  ul, ol{
+    padding-left: 20px;
+    margin-bottom: 32px;
+  }
+  ul{
+    list-style: disc;
+  }
+  ol{
+    list-style: decimal;
+  }
+}
