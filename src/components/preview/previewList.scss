@@ -40,8 +40,15 @@
 
 @media screen and (max-width: 900px){
   #previewList{
+    position: relative;
     padding-top: 70px;
     height: 100vh;
+    >h1{
+      font-size: 24px;
+      position: absolute;
+      top: 25px;
+      left: 25px;
+    }
   }
 }
 

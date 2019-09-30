@@ -8,7 +8,7 @@ import Filter from './filter'
 // import { getAlcoholic, getGlasses, getCategories } from '../../apiCalls/xhr';
 import { getAlcoholic, getGlasses, getCategories } from '../../apiCalls/fetch';
 
-const FilterMenu = ({history, location, toggleBurger}) => {
+const FilterMenu = ({history, location, toggleBurger = null}) => {
   const [alcoholic, setAlcoholic] = useState([]);
   const [glasses, setGlasses] = useState([]);
   const [categories, setCategories] = useState([]);
@@ -39,7 +39,7 @@ const FilterMenu = ({history, location, toggleBurger}) => {
 
   const handleChange = data => {
     history.push(`/filter/?type=${data.name}&value=${data.value}`);
-    toggleBurger();
+    toggleBurger && toggleBurger();
   };
 
   return(

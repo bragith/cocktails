@@ -1,8 +1,12 @@
+@import "../../styles/mediaQueries";
+
 #cocktailDetails{
   display: flex;
   justify-content: space-around;
   align-items: flex-start;
-  margin-top: 50px;
+  height: 100vh;
+  overflow: auto;
+  padding-top: 70px;
   #cocktailThumb, article{
     width: 40vw;
     max-height: 70vh;
@@ -28,5 +32,21 @@
   }
   ol{
     list-style: decimal;
+  }
+}
+
+@include mediaPhone{
+  #cocktailDetails{
+    display: block;
+    // flex-direction: column;
+    padding-left: 18px;
+    padding-right: 18px;
+    #cocktailThumb, article{
+      width: 100%;
+    }
+
+    #cocktailThumb{
+      margin-bottom: 25px;
+    }
   }
 }

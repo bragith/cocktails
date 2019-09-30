@@ -1,3 +1,5 @@
+@import '../../styles/mediaQueries';
+
 #filterMenu{
   position: sticky;
   display: flex;
@@ -59,6 +61,14 @@
     }
     >div{
       margin-bottom: 16px;
+    }
+  }
+}
+
+@include mediaPhone{
+  #filterMenu{
+    h1{
+      font-size: 32px;
     }
   }
 }

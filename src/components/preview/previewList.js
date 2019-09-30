@@ -31,6 +31,7 @@ const PreviewList = ({location}) => {
 
   return(
     <section id="previewList">
+      <h1>{new URLSearchParams(location.search).get('value')}</h1>
       <ul>
         {list && list.map((data, i) => 
           <li key={i}>

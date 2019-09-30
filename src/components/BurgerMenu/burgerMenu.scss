@@ -104,3 +104,13 @@
     display: block;
   } 
 }
+
+@include mediaPhone{
+  .mainNav {
+    &.show {
+      #filterMenu{
+        width: 100vw;
+      }
+    }
+  }
+}
