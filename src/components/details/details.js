@@ -68,10 +68,7 @@ const CocktailDetails = ({location}) => {
             <ol>
               {instructions.map((step, i) => 
                 <li key={i}>
-                  { `
-                    ${step}
-                    ${instructions.length !== (i + 1) ? '.' : ''}
-                  `}
+                  { `${step}${instructions.length !== (i + 1) ? '.' : ''}`}
                 </li>
               )}
             </ol>

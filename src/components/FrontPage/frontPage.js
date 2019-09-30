@@ -1,10 +1,12 @@
 import React from 'react';
 import './frontPage.scss';
-
-const FrontPage = () => {
+import FilterMenu from '../filter/filterMenu';
+const FrontPage = (props) => {
 
   return(
-    <section id="frontPage" />
+    <section id="frontPage">
+      <FilterMenu {...props} />
+    </section>
   )
 };
 

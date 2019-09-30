@@ -8,7 +8,7 @@ import Filter from './filter'
 // import { getAlcoholic, getGlasses, getCategories } from '../../apiCalls/xhr';
 import { getAlcoholic, getGlasses, getCategories } from '../../apiCalls/fetch';
 
-const FilterMenu = ({history, location}) => {
+const FilterMenu = ({history, location, toggleBurger}) => {
   const [alcoholic, setAlcoholic] = useState([]);
   const [glasses, setGlasses] = useState([]);
   const [categories, setCategories] = useState([]);
@@ -39,11 +39,20 @@ const FilterMenu = ({history, location}) => {
 
   const handleChange = data => {
     history.push(`/filter/?type=${data.name}&value=${data.value}`);
+    toggleBurger();
   };
 
   return(
     <nav id="filterMenu" className={location.pathname === '/' ? 'onFP' : 'offFP'}>
       <h1>Fancy a cocktail?</h1>
+      
+      <Filter 
+        filterType='category'
+        filterValue={filter.type === 'category' ? filter.value : ''}
+        filterOptions={categories}
+        handleChange={handleChange}
+      />
+
       <Filter 
         filterType='alcoholic'
         filterValue={filter.type === 'alcoholic' ? filter.value : ''}
@@ -58,12 +67,6 @@ const FilterMenu = ({history, location}) => {
         handleChange={handleChange}
       />
 
-      <Filter 
-        filterType='category'
-        filterValue={filter.type === 'category' ? filter.value : ''}
-        filterOptions={categories}
-        handleChange={handleChange}
-      />
     </nav>
   )
 };

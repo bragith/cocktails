@@ -1,15 +1,21 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './burgerMenu.scss';
 
+import FilterMenu from '../filter/filterMenu';
+
 //Burger menu with icon that animates to x when opened and back to burger when closed
-const BurgerMenu = ({children}) => {
+const BurgerMenu = (props) => {
   const [isOpen, setIsOpen] = useState(false);
+
+  const toggleBurger = () => {
+    setIsOpen(prev => !prev)
+  };
 
   return (
     <div className="burgerWrapper">
       <div
         className={`iconWrapper${isOpen ? ' open' : ' closed'}`}
-        onClick={() => setIsOpen(prev => !prev)}
+        onClick={() => toggleBurger() }
       >
         <span className="hide" />
         <span className="close closeOne" />
@@ -17,7 +23,7 @@ const BurgerMenu = ({children}) => {
         <span className="hide" />
       </div>
       <nav className={`mainNav${isOpen ? ' show' : ''}`}>
-       {children}
+        <FilterMenu {...props} toggleBurger={toggleBurger} />
       </nav>
     </div>
   );

@@ -1,5 +1,7 @@
 @import "../../styles/mediaQueries";
 #previewList{
+  height: calc(100vh - 105px);
+  overflow: auto;
   ul{
     width: 100%;
     display: flex;
@@ -8,7 +10,7 @@
     margin: 0;
     padding: 0 16px;
     li{
-      width: 25%;
+      width: 16.66666%;
       padding: 16px;
       a{
         all: unset;
@@ -17,3 +19,40 @@
   }
 }
 
+@mixin previewList($padding, $width) {
+  #previewList{
+    ul{
+      padding: 0 $padding;
+      li{
+        width: $width;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1300px) {
+  @include previewList(16, 20%);
+}
+
+@media screen and (max-width: 1024px) {
+  @include previewList(16, 25%);
+}
+
+@media screen and (max-width: 900px){
+  #previewList{
+    padding-top: 70px;
+    height: 100vh;
+  }
+}
+
+@include mediaTablet{
+  @include previewList(8, 33.3333%);
+}
+
+@include mediaPhone{
+  @include previewList(8, 50%);
+}
+
+@media screen and (max-width: 450px){
+  @include previewList(0, 100%);
+}

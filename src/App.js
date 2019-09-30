@@ -2,13 +2,14 @@ import React, {Fragment} from 'react';
 import './App.scss';
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 
-import FilterMenu from './components/filter/filterMenu';
+
 import PreviewList from './components/preview/previewList';
 import CocktailDetails from './components/details/details';
 import BurgerMenu from './components/BurgerMenu/burgerMenu';
 
 // Material UI
 import CssBaseline from '@material-ui/core/CssBaseline';
+import FrontPage from './components/FrontPage/frontPage';
 
 function App() { 
 
@@ -19,8 +20,8 @@ function App() {
       <div className="App">
         <Route path="/" render={props => (
           <Fragment>
-            <FilterMenu  {...props} />
-            <BurgerMenu/>
+            <FrontPage {...props} />
+            <BurgerMenu {...props} /> 
           </Fragment>
         )} />
         

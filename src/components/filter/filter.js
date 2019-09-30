@@ -31,7 +31,7 @@ const Filter = ({
     <Grid item>
       <form autoComplete="off">
         <FormControl className={classes.formControl}>
-          <InputLabel htmlFor={typeLowerCase}>{typeLowerCase}</InputLabel>
+          <InputLabel htmlFor={typeLowerCase}>{`${filterType[0].toUpperCase()}${filterType.substr(1)}`}</InputLabel>
           <Select
             value={filterValue}
             onChange={(e) => handleChange(e.target)}
